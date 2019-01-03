@@ -1,0 +1,32 @@
+#PAGEDIV{
+	width:700px;
+	height: 36px;
+	font-family:"微软雅黑";
+	font-size: 14px;
+	color: #333;
+	line-height: 34px;
+}
+#PAGEDIV > a,#PAGEDIV > i{
+	width:auto;
+	height:34px;
+	display: block;
+	float: left;
+	padding: 0px 10px;
+	border: 1px solid blue;
+	margin-right: 2px;
+	cursor: pointer;
+}
+#PAGEDIV > span{
+	width:auto;
+	height:34px;
+	display: block;
+	float: left;
+	padding: 0px 5px;
+	border: 1px solid blue;
+	margin-right: 2px;
+}
+#PAGEDIV > a.pageCheck{
+	border: 1px solid #fa3c3c;
+	background: #f1f1f1;
+	color: #fa3c3c;
+}

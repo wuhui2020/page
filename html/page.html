@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../css/page.css">
+</head>
+<body>
+	
+	<div class="page"></div>
+	
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../js/page.js"></script>
+	<script type="text/javascript">
+
+	$(function(){
+
+		$(".page").paging({
+			currentPage:0, // 当前页
+		    totalPage:7,//页面总页数
+		    totalCount: 35, //总记录数
+		    callback:function(num){
+		    }
+		})
+
+
+
+
+	})
+	</script>
+</body>
+</html>
