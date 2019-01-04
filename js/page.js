@@ -3,7 +3,7 @@
 	function Paging(element,options){
 		this.element = element;
 		this.options = {
-			pageNo:options.pageNo || 1,
+			currentPage:options.currentPage || 1,
 			totalPage:options.totalPage,
 			totalCount:options.totalCount,
 			callback:options.callback,
@@ -22,14 +22,14 @@
 			var _This = this;
 			var pageHtml = "";
 			var currentPage = _This.options.currentPage;
-			var pageTotal = _This.options.totalPage;
+			var totalPage = _This.options.totalPage;
 			var totalCount = _This.options.totalCount;
 
 			pageHtml+='<div id="PAGEDIV">'
 					+'<a id="firstPage">首页</a>'
 					+'<a id="prePage">上一页</a>'
 			//判断总页数大于6页			
-			if(pageTotal > 6){
+			if(totalPage > 6){
 				//判断当前小于5
 				if(currentPage < 5){
 					for (var i = 1; i < 6 ; i++) {
@@ -40,11 +40,11 @@
 						}
 					};
 					pageHtml+='<i>...</i>'
-							+'<a>'+pageTotal+'</a>'
+							+'<a>'+totalPage+'</a>'
 				}else{
 					//当前大于5时
 					//判断中间页
-					if(currentPage < parseInt(pageTotal) -3){
+					if(currentPage < parseInt(totalPage) -3){
 						for(var i = parseInt(currentPage) - 2 ;i < parseInt(currentPage) + 3; i++){
 							if(currentPage == i){
 								pageHtml+='<a class="pageCheck">'+i+'</a>'
@@ -56,7 +56,7 @@
 						//判断是否在未尾几页
 						pageHtml+='<a>1</a>'
 								+'<i>...</i>'
-						for(var i = parseInt(pageTotal) - 4; i < parseInt(pageTotal) + 1*1; i++){
+						for(var i = parseInt(totalPage) - 4; i < parseInt(totalPage) + 1*1; i++){
 							if(currentPage == i){
 								pageHtml+='<a class="pageCheck">'+i+'</a>'
 							}else{
@@ -77,7 +77,7 @@
 			}
 			pageHtml+=	'<a id="nextPage">下一页</a>'
 					+	'<a id="lastPage">尾页</a>'
-					+	'<span>共 '+pageTotal+' 页</span>'
+					+	'<span>共 '+totalPage+' 页</span>'
 					+	'<span>共 '+totalCount+' 条记录</span>'
 					+'</div>'
 			_This.element.html(pageHtml)
